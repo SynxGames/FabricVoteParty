@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "voteparty",
+  "version": "${version}",
+  "name": "FabricVoteParty",
+  "description": "",
+  "authors": ["Synx Games"],
+  "contact": {
+    "repo": "https://github.com/SynxGames/FabricVoteParty"
+  },
+  "license": "GPL-3.0",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "games.synx.fabricvoteparty.FabricVoteParty"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "fabric": "*",
+    "fabric-language-kotlin": ">=1.9.3+kotlin.1.8.20",
+    "minecraft": "1.19.2",
+    "votifier": "*"
+  }
+}
