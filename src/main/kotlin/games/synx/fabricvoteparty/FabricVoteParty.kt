@@ -36,15 +36,10 @@ object FabricVoteParty : ModInitializer {
             votePartyCount++
 
             config.rewardMessage.sendToServer(
-                "player",
-                vote.username,
-                "count",
-                votePartyCount,
-                "required",
-                config.requiredCount,
-                "percent",
-                NumberFormat.getInstance().format(votePartyCount.toDouble() / config.requiredCount.toDouble() * 100)
-                    .toInt()
+                "player", vote.username,
+                "count", votePartyCount,
+                "required", config.requiredCount,
+                "percent", NumberFormat.getPercentInstance().format(votePartyCount.toDouble() / config.requiredCount.toDouble() * 100)
             )
 
             if (votePartyCount == config.requiredCount) {
@@ -76,14 +71,9 @@ object FabricVoteParty : ModInitializer {
 
                         votePartyConfig.commandMessage.send(
                             audienceProvider.audience(player),
-                            "count",
-                            votePartyCount,
-                            "required",
-                            votePartyConfig.requiredCount,
-                            "percent",
-                            NumberFormat.getInstance()
-                                .format(votePartyCount.toDouble() / votePartyConfig.requiredCount.toDouble() * 100)
-                                .toInt()
+                            "count", votePartyCount,
+                            "required", votePartyConfig.requiredCount,
+                            "percent", NumberFormat.getPercentInstance().format(votePartyCount.toDouble() / votePartyConfig.requiredCount.toDouble() * 100)
                         )
 
                         Command.SINGLE_SUCCESS
